@@ -24,3 +24,4 @@ class App extends Component() {
 }
 
 export default App;
+//How to upload files to the server using JavaScript: https://flaviocopes.com/file-upload-using-ajax/
