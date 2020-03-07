@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from './logo.png'
+import logo from '../assets/images/logo.png'
 function Navbar(){
     const Header = styled.div`
         border-bottom: 1px solid teal;
