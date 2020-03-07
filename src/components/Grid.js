@@ -14,45 +14,36 @@ const Cell = styled.td`
     border: 1px solid white;
     background:black;
 `
+//fix bool so it toggles just for individual cells, not table only (state of cells- cell component?)
 let hidden = true
-function chooseCell(e){
-    if(hidden){
+function chooseCell(e) {
+    if (hidden) {
         e.target.style.background = "rgba(0,0,0,0)"
     }
-    else{
+    else {
         e.target.style.background = "black"
     }
     hidden = !hidden
 }
 function Grid() {
-    return <Table onClick = { (e)=>{chooseCell(e)}}>
+    const cells = Array(12).fill("dummyData")
+    const rows = Array(20).fill("dummyData")
+    return (<Table onClick={(e) => { chooseCell(e) }}>
         <tbody>
-        <tr>
-            <Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell />
-        </tr>
-        <tr>
-            <Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell />
-        </tr>
-        <tr>
-            <Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell />
-        </tr>
-        <tr>
-            <Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell />
-        </tr>
-        <tr>
-            <Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell />
-        </tr>
-        <tr>
-            <Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell />
-        </tr>
-        <tr>
-            <Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell />
-        </tr>
-        <tr>
-            <Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell /><Cell />
-        </tr>
+            {rows.map((each, i) => {
+                return (
+                <tr>
+                    {cells.map((each, i) => {
+                        return <Cell/>
+                            })}
+            
+                </tr>
+                )
+                    })}
+                   
+        
         </tbody>
-        </Table>
-}
-
+    </Table>)
+    }
+    
 export default Grid;
