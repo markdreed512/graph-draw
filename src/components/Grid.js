@@ -12,22 +12,21 @@ background-repeat: no-repeat;
 //fix bool so it toggles just for individual cells, not table only (state of cells- cell component?)
 
 function Grid() {
-    const cells = Array(12).fill("dummyData")
-    const rows = Array(20).fill("dummyData")
+    let rows = 5
+    let cols = 5
+    const cellsArr = Array(cols).fill("dummyData")
+    const rowsArr = Array(rows).fill("dummyData")
     return (<Table >
         <tbody>
-            {rows.map((each, i) => {
+            {rowsArr.map((each, i) => {
                 return (
                 <tr>
-                    {cells.map((each, i) => {
+                    {cellsArr.map((each, i) => {
                         return <Cell/>
                             })}
-            
                 </tr>
                 )
                     })}
-                   
-        
         </tbody>
     </Table>)
     }

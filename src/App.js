@@ -1,11 +1,12 @@
 import React from 'react';
 import Navbar from './components/Navbar'
 import Grid from './components/Grid'
-
+import SizingButtons from './components/SizingButtons'
 const App = () =>{
   return (
     <div>
       <Navbar />
+      <SizingButtons />
       <Grid />
     </div>
   )
