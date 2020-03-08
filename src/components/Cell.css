@@ -1,0 +1,13 @@
+td{
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    border-collapse: collapse;
+    border: 1px solid white;
+}
+.opaque{
+    opacity: 1;
+}
+.transparent{
+    opacity: 0;
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import Cell from './Cell'
 const Table = styled.table`
 margin: 50px auto;
 border-collapse: collapse;
@@ -8,27 +8,13 @@ background-image: url('https://bloximages.newyork1.vip.townnews.com/omaha.com/co
 background-size: 100%;
 background-repeat: no-repeat;
 `
-const Cell = styled.td`
-    width: 100px;
-    height: 100px;
-    border: 1px solid white;
-    background:black;
-`
+
 //fix bool so it toggles just for individual cells, not table only (state of cells- cell component?)
-let hidden = true
-function chooseCell(e) {
-    if (hidden) {
-        e.target.style.background = "rgba(0,0,0,0)"
-    }
-    else {
-        e.target.style.background = "black"
-    }
-    hidden = !hidden
-}
+
 function Grid() {
     const cells = Array(12).fill("dummyData")
     const rows = Array(20).fill("dummyData")
-    return (<Table onClick={(e) => { chooseCell(e) }}>
+    return (<Table >
         <tbody>
             {rows.map((each, i) => {
                 return (
