@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Cell from './Cell'
+
 const Table = styled.table`
 margin: 50px auto;
 border-collapse: collapse;
@@ -9,26 +10,25 @@ background-size: 100%;
 background-repeat: no-repeat;
 `
 
-//fix bool so it toggles just for individual cells, not table only (state of cells- cell component?)
-
-function Grid() {
+function Grid(props) {
     let rows = 5
     let cols = 5
+
     const cellsArr = Array(cols).fill("dummyData")
     const rowsArr = Array(rows).fill("dummyData")
-    return (<Table >
+    return (<Table size = {props.size}>
         <tbody>
             {rowsArr.map((each, i) => {
                 return (
-                <tr>
-                    {cellsArr.map((each, i) => {
-                        return <Cell/>
-                            })}
-                </tr>
+                    <tr>
+                        {cellsArr.map((each, i) => {
+                            return <Cell size={props.size} />
+                        })}
+                    </tr>
                 )
-                    })}
+            })}
         </tbody>
     </Table>)
-    }
-    
+}
+
 export default Grid;
