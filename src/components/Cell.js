@@ -4,8 +4,7 @@ import './Cell.css'
 function Cell(props) {
     const myStyle = {
         width: props.size + "px",
-        height: props.size + "px",
-        backgroundColor: "blue"
+        height: props.size + "px"
     }
     const [opaque, setOpaque] = useState( true )
     const handleClick = () => {

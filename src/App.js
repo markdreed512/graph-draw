@@ -5,19 +5,26 @@ import SizingButtons from './components/SizingButtons'
 const App = () =>{
   const [cellSize, setCellSize] = useState(100)
   let rows = 10
-  let cols = 10
+  const [columns, setColumns] = useState(10)
   const handleClick = (e) => {
     if(e.target.id === 'increase-btn'){
-      setCellSize(cellSize + 2)
+      if(columns < 20){
+        setColumns(columns + 1)
+        setCellSize(1000/columns)
+      }
+      
     }else if(e.target.id === 'decrease-btn'){
-      setCellSize(cellSize - 2)
+      if (columns > 4){
+        setColumns(columns - 1)
+        setCellSize(1000/columns)
+      }
     }
   }
   return (
     <div onClick = {handleClick}>
       <Navbar />
       <SizingButtons />
-      <Grid size = {cellSize} rows = {rows} cols = {cols}/>
+      <Grid size = {cellSize} rows = {rows} cols = {columns}/>
     </div>
   )
 }
