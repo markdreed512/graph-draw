@@ -4,7 +4,7 @@ import styled from 'styled-components'
 function SizingButtons(){
    
     const Div = styled.div`
-        margin: 100px 0 0 300px;
+        margin: 100px 0 0 20px;
         float: left;
         font-family: arial;
         color: white;
@@ -24,7 +24,6 @@ function SizingButtons(){
             <P>Increase Cell Size</P>
             <Button id="decrease-btn">-</Button>
             <P>Decrease Cell Size</P>
-    <h1>Current Cell Size: </h1>
         </Div>
     )
 }

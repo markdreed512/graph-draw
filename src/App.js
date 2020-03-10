@@ -4,6 +4,8 @@ import Grid from './components/Grid'
 import SizingButtons from './components/SizingButtons'
 const App = () =>{
   const [cellSize, setCellSize] = useState(100)
+  let rows = 10
+  let cols = 10
   const handleClick = (e) => {
     if(e.target.id === 'increase-btn'){
       setCellSize(cellSize + 2)
@@ -15,7 +17,7 @@ const App = () =>{
     <div onClick = {handleClick}>
       <Navbar />
       <SizingButtons />
-      <Grid size = {cellSize}/>
+      <Grid size = {cellSize} rows = {rows} cols = {cols}/>
     </div>
   )
 }

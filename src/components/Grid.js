@@ -11,12 +11,12 @@ background-repeat: no-repeat;
 `
 
 function Grid(props) {
-    let rows = 5
-    let cols = 5
+    let rows = props.rows
+    let cols = props.cols
 
     const cellsArr = Array(cols).fill("dummyData")
     const rowsArr = Array(rows).fill("dummyData")
-    return (<Table size = {props.size}>
+    return (<Table>
         <tbody>
             {rowsArr.map((each, i) => {
                 return (
