@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from '../assets/images/logo.png'
-import LoginIcon from './LoginIcon'
+import LoginModal from './LoginModal'
 function Navbar(){
     const Header = styled.div`
         border-bottom: 1px solid teal;
@@ -32,7 +32,7 @@ function Navbar(){
             <Logo src={logo} alt=""/>
             
             <NavList>
-                <Li><LoginIcon /></Li>
+                <Li><LoginModal /></Li>
                 <Li>My Photos</Li>
                 <Li>Help</Li>
             </NavList>
