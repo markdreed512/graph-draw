@@ -17,6 +17,8 @@ const LoginModal = () => {
     z-index: 1;
     font-family: arial;
     font-size: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px grey;
     visibility: ${visible}
 `
 const Input = styled.input`
@@ -26,35 +28,37 @@ const Input = styled.input`
     margin: 30px auto;
     padding: 10px;
     color: black;
-    
+    border-radius: 4px;
 `
 const Button = styled.button`
     display: block;
     font-size: 20px;
-    background-color: rgba(0,255,255, .2);
+    background-color: rgba(0,255,255);
     margin: 30px auto;
 `
 const Label = styled.label`
         display: block;
-        margin-top: 20px ;
+        margin-top: 40px ;
 `
 const Form = styled.form`
     text-align: center;
 `
 
-const openLoginModal = () => {
-
-    
-    if (visible === "hidden") {
-        setVisible("visible")
-    } else {
-        setVisible("hidden")
+const openLoginModal = (e) => {
+    console.log(e.target.id)
+    if(e.target.id === "user-icon"){
+        if (visible === "hidden") {
+            setVisible("visible")
+        } else {
+            setVisible("hidden")
+        }
     }
+    
     
 }
     return (
 
-        <i class="fa fa-user" onClick={openLoginModal}>
+        <i id="user-icon" className="fa fa-user" onClick={openLoginModal}>
             <Modal >
                 <Form action="submit">
                     <Label>Sign Up</Label>
