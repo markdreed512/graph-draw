@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from '../assets/images/logo.png'
+import LoginIcon from './LoginIcon'
 function Navbar(){
     const Header = styled.div`
         border-bottom: 1px solid teal;
@@ -25,13 +26,13 @@ function Navbar(){
     const ClearFloat= styled.div`
         clear: both
     `
-
+    
     return (
         <Header>
             <Logo src={logo} alt=""/>
             
             <NavList>
-                <Li>Home</Li>
+                <Li><LoginIcon /></Li>
                 <Li>My Photos</Li>
                 <Li>Help</Li>
             </NavList>
